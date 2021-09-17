@@ -1,11 +1,16 @@
-with open('../src/24-s1.txt', 'r', encoding='utf-8') as f:
-	strings = f.readlines()
+with open('../src/24.txt', 'r', encoding='utf-8') as f:
+	seq = f.read()
 
-print(strings[2])
-cnt = 0
-for s in strings:
-	for i in range(len(s) - 2):
-		if s[i] == 'A' and s[i + 2] == "R":
-			cnt += 1
+list = []
+str = ''
+for i in range(len(seq)):
+	if seq[i].isdigit():
+		str += seq[i]
+	else:
+		if str:
+			list.append(str)
+		str = ''
+print(list)
 
-print(cnt)
+list = max([int(i) for i in list if int(i) % 2 == 0])
+print(list)
