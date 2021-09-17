@@ -12,5 +12,5 @@ for i in range(len(seq)):
 		str = ''
 print(list)
 
-list = max([int(i) for i in list if int(i) % 2 == 0])
-print(list)
+list = [int(i) for i in list if int(i) % 2 == 0]
+print(max(list))
